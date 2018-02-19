@@ -1,0 +1,32 @@
+<div class="nav-container">
+  <nav>
+    <div class="item left">
+      left
+    </div>
+    <div class="item mid">
+      <ul>
+        <li><a [routerLink]="[{ outlets: { information: ['home'] } }]" routerLinkActive="active">home</a></li>
+        <li><a [routerLink]="[{ outlets: { information: ['about'] } }]" routerLinkActive="active">about</a></li>
+        <li><a [routerLink]="[{ outlets: { information: ['services'] } }]"routerLinkActive="active">habilidades</a></li>
+      </ul>
+    </div>
+    <div class="item right">
+        <ul>
+            <li><a [routerLink]="[{ outlets: { gallery: ['design'] } }]" routerLinkActive="active">Servicios</a></li>
+            <li><a [routerLink]="[{ outlets: { gallery: ['develop'] } }]" routerLinkActive="active">Diseños</a></li>
+        </ul>
+    </div>
+  </nav>
+</div>
+
+<main [@informationAnimation]="routeState(informationOutlet)">
+    <aud-side-information [skills]="DevSkills"></aud-side-information>
+  <router-outlet #informationOutlet="outlet" name="information"></router-outlet>
+  <aud-side-information [skills]="DsgSkills"></aud-side-information>
+</main>
+
+<section [@galleryAnimation]="routeState(galleryOutlet)">
+
+    <router-outlet #galleryOutlet="outlet" name="gallery"></router-outlet>
+
+</section>

@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let skill of skills.skills">
+    <div class="skill-icon" [style.background-image]="'url(../../../../assets/images/'+skills.tipo+'.png)'"></div>
+    <a class="skill-information">{{skill}}</a>
+  </li>
+</ul>
